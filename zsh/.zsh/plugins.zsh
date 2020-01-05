@@ -19,7 +19,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-#---[load]-
+#---[load]
 zplug load
 
 # fix for git crash

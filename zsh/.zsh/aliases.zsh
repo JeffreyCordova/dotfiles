@@ -13,14 +13,15 @@ alias grep="grep --color=auto"
 #---[print PATH]----------------------------------------------------------------
 alias path='printf "${PATH//:/\\n}\n"'
 
-#---[update mirrors]------------------------------------------------------------
+#---[pacman]--------------------------------------------------------------------
+
+#update mirrors
 alias reflector="sudo reflector --verbose \
-                                --protocol https \
                                 --latest 150 \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
 
-#---[browse installed packages]-------------------------------------------------
+#browse installed packages
 alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' \
                                   --layout=reverse \
                                   --bind 'enter:execute(pacman -Qil {} | less)'"

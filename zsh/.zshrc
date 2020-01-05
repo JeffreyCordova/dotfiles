@@ -6,17 +6,7 @@
 #                             
 
 export DOTFILES="$HOME/dotfiles"
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-#---[WSL]-----------------------------------------------------------------------
-if [ -x "$(command -v wsl.exe)" ]; then
-    export $(dbus-launch)
-    export LIBGL_ALWAYS_INDIRECT=1
-
-    export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')
-    export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
-    export DISPLAY=$WSL_HOST:0
-fi
+#export QT_QPA_PLATFORMTHEME=qt5ct
 
 #---[plugins]-------------------------------------------------------------------
 source $DOTFILES/zsh/.zsh/plugins.zsh
